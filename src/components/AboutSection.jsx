@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import aboutImg from '@/images/hero-section.jpeg'; // Reusing hero image or another luxury image placeholder
+import aboutImg from '@/images/Floral Studs Earrings/2.png';
 
 export default function AboutSection() {
   return (

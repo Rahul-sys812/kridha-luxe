@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { MapPin, Phone, Mail, Send, Navigation } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function ContactUs() {
   const recaptchaRef = useRef(null);
@@ -25,7 +26,7 @@ export default function ContactUs() {
   return (
     <div className="bg-brand-cream/20 min-h-screen pt-40 pb-24 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
-        
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Contact Us' }]} />
         {/* Header */}
         <div className="text-center mb-20 space-y-6 animate__animated animate__fadeInDown">
           <span className="uppercase text-brand-gold tracking-[0.5em] font-bold text-[10px]">

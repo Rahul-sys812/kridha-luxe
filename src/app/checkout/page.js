@@ -4,6 +4,7 @@ import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { ShieldCheck, ArrowLeft, ArrowRight, CreditCard, ShoppingBag, Loader2, AlertCircle } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 function loadRazorpayScript() {
   return new Promise((resolve) => {
@@ -184,6 +185,7 @@ export default function Checkout() {
       <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-7xl">
 
         <div className="mb-16 space-y-6 animate__animated animate__fadeInLeft">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Collections', href: '/collections' }, { label: 'Checkout' }]} />
           <button onClick={() => router.back()} className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-brand-gold transition-colors">
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Boutique
           </button>

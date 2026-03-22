@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useCart } from '@/context/CartContext';
 import ProductCard from '@/components/ProductCard';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function WishlistPage() {
   const { wishlist, toggleWishlist } = useAuth();
@@ -12,6 +13,7 @@ export default function WishlistPage() {
   return (
     <div className="min-h-screen bg-brand-cream/20 pt-16 pb-32">
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Wishlist' }]} />
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-6xl font-serif font-light text-brand-charcoal uppercase tracking-tighter">
             Your <span className="italic font-bold text-brand-gold">Wishlist</span>

@@ -4,7 +4,7 @@ import InfoPage from '@/components/InfoPage';
 
 export default function Terms() {
   return (
-    <InfoPage title="Terms of Engagement">
+    <InfoPage title="Terms of Engagement" breadcrumbLabel="Terms of Service">
       <p>By entering the Kridha Luxe boutique, you agree to abide by our terms of engagement designed to ensure a refined experience for all our patrons.</p>
       
       <h3>Boutique Usage</h3>

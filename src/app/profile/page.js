@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { Package, User, LogOut, ShoppingBag } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function Profile() {
   const { userInfo, logout, authFetch } = useAuth();
@@ -28,6 +29,7 @@ export default function Profile() {
 
         {/* Header */}
         <div className="mb-16 space-y-4 animate__animated animate__fadeIn">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Profile' }]} />
           <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-brand-gold">My Account</span>
           <h1 className="text-5xl md:text-7xl font-serif font-light text-brand-charcoal uppercase tracking-tighter">
             {userInfo.name}

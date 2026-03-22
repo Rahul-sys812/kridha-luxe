@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import { ShoppingBag, Star, Truck, ShieldCheck, ArrowLeft, Minus, Plus, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function ProductDetails() {
   const params = useParams();
@@ -72,6 +73,11 @@ export default function ProductDetails() {
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         
         {/* Breadcrumb Navigation */}
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Collections', href: '/collections' },
+          { label: product.name }
+        ]} />
         <button 
           onClick={() => router.back()}
           className="flex items-center text-[9px] font-bold uppercase tracking-[0.4em] text-gray-400 hover:text-brand-gold transition-all mb-12 group animate__animated animate__fadeInLeft"

@@ -5,13 +5,14 @@ import { motion } from 'framer-motion';
 import giftMuse from '@/images/Autumn Earrings for Women Maple Leaf Earrings/1.png';
 import giftKeepsake from '@/images/Cubic Zirconia Bow Earrings/1.png';
 import giftCelestial from '@/images/Western Korean Bow Zircon Stone Stud Earrings/1.png';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function Gifting() {
   return (
     <div className="bg-brand-cream/10 min-h-screen pt-40 pb-24 overflow-hidden">
-      
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 lg:px-12 text-center mb-32 animate__animated animate__fadeIn">
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Gifting' }]} />
         <div className="space-y-8">
           <div className="flex justify-center mb-10">
             <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border border-brand-cream animate__animated animate__zoomIn">

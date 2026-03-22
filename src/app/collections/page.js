@@ -6,6 +6,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useFilter } from '@/context/FilterContext';
 import { categoryNames } from '@/data/categories';
 import ProductCard from '@/components/ProductCard';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function Collections() {
   const { addToCart } = useCart();
@@ -33,6 +34,7 @@ export default function Collections() {
     <div className="bg-brand-cream/10 min-h-screen pt-40 pb-32">
       {/* Page Header */}
       <section className="container mx-auto px-4 md:px-6 lg:px-12 mb-20 animate__animated animate__fadeIn">
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Collections' }]} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 pb-12 border-b border-brand-cream">
            <div className="space-y-4">
               <span className="uppercase text-brand-gold tracking-[0.5em] font-bold text-[10px] block">

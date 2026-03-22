@@ -4,7 +4,7 @@ import InfoPage from '@/components/InfoPage';
 
 export default function ShippingPolicy() {
   return (
-    <InfoPage title="Shipping & Departure">
+    <InfoPage title="Shipping & Departure" breadcrumbLabel="Shipping Policy">
       <p>We believe the anticipation of a Kridha Luxe piece should be as elegant as the piece itself. Our shipping procedures are designed for swift and secure delivery.</p>
       
       <h3>National Departure</h3>

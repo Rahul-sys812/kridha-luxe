@@ -4,7 +4,7 @@ import InfoPage from '@/components/InfoPage';
 
 export default function Privacy() {
   return (
-    <InfoPage title="Privacy Boutique">
+    <InfoPage title="Privacy Boutique" breadcrumbLabel="Privacy Boutique">
       <p>At Kridha Luxe, your privacy is as precious as our collections. We are committed to protecting the personal information you entrust to our digital boutique.</p>
       
       <h3>Data Acquisition</h3>

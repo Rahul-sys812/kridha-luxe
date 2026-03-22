@@ -4,7 +4,7 @@ import InfoPage from '@/components/InfoPage';
 
 export default function Returns() {
   return (
-    <InfoPage title="Returns & Exchange">
+    <InfoPage title="Returns & Exchange" breadcrumbLabel="Returns & Care">
       <p>Your satisfaction is the cornerstone of our boutique. Should an acquisition not meet your refined expectations, we offer a graceful return process.</p>
       
       <h3>7-Day Grace Period</h3>

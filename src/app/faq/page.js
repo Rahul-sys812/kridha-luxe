@@ -4,7 +4,7 @@ import InfoPage from '@/components/InfoPage';
 
 export default function FAQ() {
   return (
-    <InfoPage title="Journal & FAQ">
+    <InfoPage title="Journal & FAQ" breadcrumbLabel="Journal / FAQ">
       <div className="space-y-12">
         <div className="space-y-4">
           <h3>1. How do I care for my Kridha Luxe selections?</h3>

@@ -94,27 +94,24 @@ export default function Header() {
 
             {/* Center: Category Menu (Desktop) */}
             <div className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-1">
-              <Link href="/collections?isTrending=true" className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all text-brand-gold relative group">
-                Trending
-                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-brand-gold transition-all duration-300"></span>
-              </Link>
-              <Link href="/collections?isNew=true" className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold text-brand-charcoal relative group">
-                New
+              <Link href="/" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname === '/' ? 'text-brand-gold' : 'text-brand-charcoal'}`}>
+                Home
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
               </Link>
-              {menuCategoryNames.slice(0, 4).map((cat) => (
-                <Link 
-                  key={cat} 
-                  href={`/collections?category=${cat}`}
-                  onClick={() => handleCategoryClick(cat)}
-                  className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname.includes(cat) ? 'text-brand-gold' : 'text-brand-charcoal'}`}
-                >
-                  {cat}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
-                </Link>
-              ))}
-              <Link href="/gifting" className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold text-brand-charcoal relative group">
-                Gifts
+              <Link href="/collections" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname === '/collections' ? 'text-brand-gold' : 'text-brand-charcoal'}`}>
+                Collections
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+              </Link>
+              <Link href="/gifting" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname === '/gifting' ? 'text-brand-gold' : 'text-brand-charcoal'}`}>
+                The Gift Edit
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+              </Link>
+              <Link href="/about" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname === '/about' ? 'text-brand-gold' : 'text-brand-charcoal'}`}>
+                Our Heritage
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
+              </Link>
+              <Link href="/contact" className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-brand-gold relative group ${pathname === '/contact' ? 'text-brand-gold' : 'text-brand-charcoal'}`}>
+                Contact
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold group-hover:w-full transition-all duration-300"></span>
               </Link>
             </div>
@@ -198,22 +195,17 @@ export default function Header() {
                 <button onClick={() => setIsOpen(false)} className="p-2 bg-brand-cream rounded-full"><X className="w-5 h-5 text-brand-charcoal" /></button>
               </div>
               <div className="space-y-6">
-                 {menuCategoryNames.map((cat, index) => (
-                   <Link 
-                    key={cat} 
-                    href={`/collections?category=${cat}`} 
-                    onClick={() => handleCategoryClick(cat)} 
-                    className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors"
-                   >
-                    {cat}
-                   </Link>
-                 ))}
+                 <Link href="/" onClick={() => setIsOpen(false)} className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors">Home</Link>
+                 <Link href="/collections" onClick={() => setIsOpen(false)} className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors">Collections</Link>
+                 <Link href="/gifting" onClick={() => setIsOpen(false)} className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors">The Gift Edit</Link>
+                 <Link href="/about" onClick={() => setIsOpen(false)} className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors">Our Heritage</Link>
+                 <Link href="/contact" onClick={() => setIsOpen(false)} className="block text-2xl font-serif uppercase tracking-tight text-brand-charcoal hover:text-brand-gold transition-colors">Contact</Link>
                  <div className="pt-8 border-t border-gray-100 flex flex-col gap-6">
-                    <Link href="/login" onClick={() => setIsOpen(false)} className="text-xs font-bold uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
-                       <User className="w-4 h-4" /> Login / Register
+                    <Link href={mounted && userInfo ? "/profile" : "/login"} onClick={() => setIsOpen(false)} className="text-xs font-bold uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
+                       <User className="w-4 h-4" /> {mounted && userInfo ? userInfo.name.split(' ')[0] : 'Login / Register'}
                     </Link>
-                    <Link href="/stores" onClick={() => setIsOpen(false)} className="text-xs font-bold uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
-                       <Store className="w-4 h-4" /> Our Stores
+                    <Link href="/wishlist" onClick={() => setIsOpen(false)} className="text-xs font-bold uppercase tracking-widest text-brand-charcoal flex items-center gap-2">
+                       <Heart className="w-4 h-4" /> Wishlist
                     </Link>
                  </div>
               </div>
